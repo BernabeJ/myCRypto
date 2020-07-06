@@ -1,0 +1,396 @@
+html{
+    min-height: 100%;
+    position: relative;
+    
+}
+
+body{
+  
+    margin: 0;
+    margin-bottom: 40px;
+    background: #f0f8ea;
+    font-family: 'Audiowide', cursive;
+    text-align: center;
+
+    
+}
+.container{
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+header{
+    background: #557e7c;
+    color: #ebebd3;
+    padding: 1em 0;
+    position: relative;
+}
+
+header::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.logo{
+    float: left;
+    font-size: 1rem;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.logo span{
+    font-weight: 300;
+}
+.site-nav{
+    top:100%;
+    right:0;
+    position: absolute;
+    background: #464655;
+    clip-path: circle(0px at top right);
+    transition: clip-path ease-in-out 700ms;
+    z-index: 1;
+}
+.site-nav-open{
+    clip-path: circle(150% at top right);
+}
+.site-nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.site-nav li{
+    border-bottom: 1px solid #575766;
+}
+.site-nav li:last-child{
+    border-bottom: none;
+}
+.site-nav a{
+    color: #ebedb3;
+    display: block;
+    padding: 2em 6em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.site-nav a:hover,
+.site-nav a:focus{
+    background: #e4b363;
+    color: #464655;
+}
+
+.site-nav--icon{
+    display: inline-block;
+    font-size: 1.5em;
+    margin-right: 1em;
+    width: 1.1em;
+    text-align: right;
+    color: rgba(255, 255, 255, .4);
+}
+
+.menu-toggle{
+   
+    padding: 1em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+    
+}
+.menu-open .hamburger{
+    transform: rotate(45deg);
+}
+.menu-open .hamburger::before{
+    opacity: 0;
+}
+.menu-open .hamburger::after{
+    transform: translateY(-3px) rotate(-90deg);
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    display: block;
+    background: #ebebd3;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms;
+}
+.hamburger::before{
+    transform: translateY(-6px);
+}
+.hamburger::after{
+    transform: translateY(3px);
+}
+
+.encabezado{
+    display:inline-block;
+    position: relative;
+    text-align: center;
+
+}
+
+.encabezado::after,.encabezado::before{
+    content:'';
+    position:absolute;
+    width: 120px;
+    height:3px ;
+    background-color: currentColor;
+    background-color: black;
+    top:0.6em;
+    transform:scale(0);
+    transition: all 0.2s ease-in;
+
+}
+.encabezado:hover::before, .encabezado:hover::after{
+    transform: scale(1);
+}
+.encabezado::before{
+    left:-140px
+}
+.encabezado::after{
+    right:-140px;
+}
+
+
+
+
+.contenedor {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.table {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    table-layout: fixed;
+}
+
+.table caption {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 8px 0px;
+}
+
+.table tr {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.table th, .table td {
+    font-size: 16px;
+    padding: 8px;
+    text-align: center;
+}
+
+.table thead th{ 
+    text-transform: uppercase;
+    background-color: #ddd;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.table tbody td:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 600px) {
+    .table {
+        border: 0px;
+    }
+    .table caption {
+        font-size: 22px;
+    }
+    .table thead {
+        display: none;
+    }
+    .table tr {
+        margin-bottom: 8px;
+        border-bottom: 4px solid #ddd;
+        display: block;
+    }
+    .table th, .table td {
+        font-size: 12px;
+    }
+    .table td {
+        display: block;
+        border-bottom: 1px solid #ddd;
+        text-align: right;
+    }
+    .table  td:last-child {
+        border-bottom: 0px;
+    }
+    .table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+    }
+}
+
+.footer {
+    width:100%;
+    height:40px;
+    background: #557e7c;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+
+}
+
+.footer p{
+    color:#ebedb3
+}
+
+p{
+    color: black;
+}
+
+.select1 {
+    position: relative;
+    top:0px;
+    right:120px;
+    height: 38px;
+    width: 100px;
+    padding: 6px 10px;
+}
+.select2 {
+    position: relative;
+    top:0px;
+    left:60px;
+    width: 100px;
+    height: 50px;
+    padding: 6px 10px;
+}
+
+.error-msg{position: relative;
+        top:0px;
+        color: red;
+        font-size: 0.8em;
+        
+    }
+
+.from_label{
+    position: relative;
+    top:0px;
+    right: 120px;
+}
+
+.to_label{
+    position:relative;
+    top:0px;
+    left: 60px;
+
+}
+
+.label_compra{
+    position: relative;
+    top:-40px;
+    right: 160px;
+}
+
+.cantidad{
+    position: relative;
+    top:40px;
+    left:100px;
+
+}
+
+.input_Q{
+    position: relative;
+    top:-40px;
+    right: 160px
+}
+
+.precio_unitario{
+    position: relative;
+    top:-120px;
+    left: 120px;
+}
+
+
+
+
+
+
+.consultar{
+    position: relative;
+    top:40px;
+    left:-300px;
+    border:2px solid white;
+    padding:20px ;
+    background-color: white;
+    color:black;
+    font-family: 'Audiowide', cursive;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.5s; background: 0.5s;
+    border-radius: 10px;
+}
+
+.consultar:hover{
+    color: black;
+    background-color: transparent;
+}
+
+.boton{
+    position: relative;
+    top:40px;
+    left:300px;
+    border:2px solid white;
+    padding:20px ;
+    background-color: white;
+    color:black;
+    font-family: 'Audiowide', cursive;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.5s; background: 0.5s;
+    border-radius: 10px;
+}
+
+.boton:hover{
+    color: black;
+    background-color: transparent;
+}
+
+
+
+@media (min-width:700px){
+  .menu-toggle{
+      display: none;
+  } 
+  .site-nav{
+      height: auto;
+      position: relative;
+      background: transparent;
+      float: right;
+      margin-right: 10px;
+      clip-path: initial;
+  } 
+  .site-nav li{
+      display: inline-block;
+      border: none;
+  }
+
+  .site-nav a{
+      padding: 0;
+      margin-left: 3em;
+  }
+  .site-nav--icon{
+      display: none;
+  }
+  .site-nav a:hover,
+  .site-nav a:focus{
+      background: transparent;
+  }
+
+
+
+}
+

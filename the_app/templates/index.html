@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block titulo %} Inicio {% endblock %}
+{% block contenido %}
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <h1 class="encabezado">MOVIMIENTOS</h1>
+
+    <table class="contenedor" id="table" name="table">
+        <tr>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>From</th>
+            <th>Cantidad</th>
+            <th>To</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+        </tr>
+        {% for compra in comprados %}
+        </tr>
+            <td>{{ compra[1] }}</td>
+            <td>{{ compra[2][:-4] }}</td>
+            <td>{{ compra[3] }}</td>
+            <td>{{ compra[4] }}</td>
+            <td>{{ compra[5] }}</td>
+            <td>{{ compra[6] }}</td>
+            <td>{{ compra[7] }}</td>
+            
+
+       {% endfor %}
+    </table>
+{% endblock %} 
+
