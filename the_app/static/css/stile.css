@@ -270,7 +270,7 @@ p{
 }
 
 .error-msg{position: relative;
-        top:0px;
+        top:40px;
         color: red;
         font-size: 0.8em;
         

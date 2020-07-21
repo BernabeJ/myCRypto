@@ -11,13 +11,7 @@
             {{ form.From(class="select1")}}
         {{ form.hidden_tag() }}
           {{ form.To.label (class="to_label")}}
-        {% if form.To.errors %}
-              {% for error in form.To.errors %}
-                <p class="error-msg">{{ error }}</p>
-              {% endfor %}
-            {% else %}
             {{ form.To(class="select2") }}
-            {% endif %}
           </select>
         
         {{ form.hidden_tag() }}
@@ -28,7 +22,7 @@
   
           
         {{ form.Q.label  (class="label_compra")}}
-        {{ form.Q(class="input_Q") }}
+        {{ form.Q(class="input_Q", maxlength="7") }}
         {% if form.Q.errors %}
               {% for error in form.Q.errors %}
                 <p class="error-msg">{{ error }}</p>
@@ -38,7 +32,11 @@
         
         {{ form.hidden_tag() }}
         <p class="precio_unitario"> Precio Unitario: {{precio_unitario}}</p>
-        
+        <p class ="error-msg">{{ sin_saldo }}</p>
+        <p class ="error-msg">{{ error_el }}</p>
+        <p class ="error-msg">{{ error_int }}</p>
+        <p class ="error-msg">{{ error_int2 }}</p>
+        <p class ="error-msg">{{ error_consulta }}</p>
 
     </form>
 

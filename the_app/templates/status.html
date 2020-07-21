@@ -8,11 +8,11 @@
     <form action="/status" method="post" class="status">
         {{ form.hidden_tag() }}
             {{ form.invertido.label }}
-            {{ compraEuros }}
+            {{ EurosInvertidos }}
 
         <br>
         {{ form.hidden_tag() }}
             {{ form.valor_actual.label }}
-            {{ inversion_Euros }}
+            {{ Total_saldo }}
 
 {% endblock %}
