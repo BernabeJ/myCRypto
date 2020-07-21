@@ -18,4 +18,11 @@ Renombrar `.env_template` a `.env` e infomar las claves
 
 4. Crear BD
 
-Ejecutar `migrations.sql` con `sqlite3` en el fichero elegido como base de datos
+    Desde el directorio /data ejecutar
+        - sqlite3 <nombre_bd>.db
+    Desde la consola de sqlite3 ejecutar
+        - .read migrations.sql
+    Comproba que se han creado las tablas
+        - .tables
+    Salir
+        - .q
