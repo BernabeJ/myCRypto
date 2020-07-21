@@ -176,16 +176,20 @@ def status():
     Saldo_E = []
    
     d = {k: v for k, v in d.items() if v!=None}
+    try:
+        for clave in d:
+            Key = app.config['KEY']
+            URL = "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?amount={}&symbol={}&convert=EUR&CMC_PRO_API_KEY={}"
+            response = requests.get(URL.format(d[clave],clave,Key))
+            json = response.json()
+            print (json)
+            Saldo_E.append(json.get('data').get('quote').get('EUR')['price'])
+            Total_saldo=sum(Saldo_E)
+            Total_saldo=round(Total_saldo,3)
+                
+        return render_template('status.html', form=form, Total_saldo=Total_saldo, EurosInvertidos=EurosInvertidos)
 
-    for clave in d:
-        Key = app.config['KEY']
-        URL = "https://pro-api.coinmarketcap.com/v1/tools/price-conversion?amount={}&symbol={}&convert=EUR&CMC_PRO_API_KEY={}"
-        response = requests.get(URL.format(d[clave],clave,Key))
-        json = response.json()
-        print (json)
-        Saldo_E.append(json.get('data').get('quote').get('EUR')['price'])
-        Total_saldo=sum(Saldo_E)
-        Total_saldo=round(Total_saldo,3)
-            
-    return render_template('status.html', form=form, Total_saldo=Total_saldo, EurosInvertidos=EurosInvertidos)
-
+    except:
+        EurosInvertidos = EurosInvertidos
+        Total_saldo = None
+        return render_template('status.html', form=form, Total_saldo=Total_saldo, EurosInvertidos=EurosInvertidos)
