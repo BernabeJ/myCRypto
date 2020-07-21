@@ -22,7 +22,7 @@ Renombrar `.env_template` a `.env` e infomar las claves
         - sqlite3 <nombre_bd>.db
     Desde la consola de sqlite3 ejecutar
         - .read migrations.sql
-    Comproba que se han creado las tablas
+    Comprobar que se han creado las tablas
         - .tables
     Salir
         - .q
